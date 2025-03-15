@@ -1,5 +1,5 @@
 
-// @ts-nocheck
+
 import { projects } from "../../../data/index";
 import { notFound } from "next/navigation";
 import HeroParallaxDemo from "../components/HeroParalax";
