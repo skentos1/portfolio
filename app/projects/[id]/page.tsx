@@ -1,3 +1,5 @@
+// Example for pages/projects/[id].tsx
+
 import { projects } from "../../../data/index";
 import { notFound } from "next/navigation";
 import HeroParallaxDemo from "../components/HeroParalax";
@@ -7,11 +9,13 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data";
 
 interface ProjectPageProps {
-  params: { id: string };
+  params: { id: string } | Promise<{ id: string }>;
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.id === params.id);
+  // Ak je params Promise, počkáme na jeho vyriešenie
+  const resolvedParams = await Promise.resolve(params);
+  const project = projects.find((p) => p.id === resolvedParams.id);
   if (!project) return notFound();
 
   return (
