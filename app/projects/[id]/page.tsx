@@ -8,11 +8,12 @@ import { TabsDemo } from "../components/Tabs";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data";
 
+
 interface ProjectPageProps {
-  params: { id: string };
+  params: any; // Zakázané detailné typovanie, aby sa zabránilo chybám
 }
 
-const ProjectPage = ({ params }: ProjectPageProps) => {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
@@ -28,6 +29,4 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
       <TabsDemo project={project} />
     </div>
   );
-};
-
-export default ProjectPage;
+}
