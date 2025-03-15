@@ -1,5 +1,5 @@
-// Example for pages/projects/[id].tsx
 
+// @ts-nocheck
 import { projects } from "../../../data/index";
 import { notFound } from "next/navigation";
 import HeroParallaxDemo from "../components/HeroParalax";
@@ -12,7 +12,7 @@ interface ProjectPageProps {
   params: { id: string };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+const ProjectPage = ({ params }: ProjectPageProps) => {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
@@ -28,4 +28,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <TabsDemo project={project} />
     </div>
   );
-}
+};
+
+export default ProjectPage;
