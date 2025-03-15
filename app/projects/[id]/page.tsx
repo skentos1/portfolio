@@ -9,13 +9,11 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data";
 
 interface ProjectPageProps {
-  params: { id: string } | Promise<{ id: string }>;
+  params: { id: string };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  // Ak je params Promise, počkáme na jeho vyriešenie
-  const resolvedParams = await Promise.resolve(params);
-  const project = projects.find((p) => p.id === resolvedParams.id);
+  const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
   return (
