@@ -2,7 +2,7 @@
 
 import { Tabs } from "@/components/ui/tabs";
 import { MediaSlider } from "./ImageSlider";
-import type { FullProject, SlideItem } from "../../../data";
+import type { FullProject,  } from "../../../data";
 
 interface TabsDemoProps {
   project?: FullProject;

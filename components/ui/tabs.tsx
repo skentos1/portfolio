@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion"; // If you're using Motion from "motion/react", adjust accordingly
-import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 
 // ------------------- TYPES & INTERFACES -------------------

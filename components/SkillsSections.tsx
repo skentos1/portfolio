@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import simonImage from "../public/images/Simon.jpg";
+
 import Mern from "../public/images/Mern.avif";
 import Mobile from "../public/images/mobile.jpg";
 import NextImage from "next/image";
 import Home from "../public/images/exp4.svg";
-import { useEffect, useRef } from "react";
+
 import { motion } from "motion/react"; // tu je dôležité, že importujete z "motion/react"
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
-import Link from "next/link";
+
+
 
 export function FeaturesSectionDemo({id} : {id? : string}) {
   const features = [

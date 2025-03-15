@@ -3,7 +3,7 @@
 
 
 import TestimonialsSection from "@/components/AboutMe";
-import DummyContent from "@/components/dummy";
+
 import Hero from "@/components/Hero";
 import PortfolioStack from "@/components/PortfolioStack";
 import RecentProjects from "@/components/RecentProjects";

@@ -11,6 +11,7 @@ const RecentProjects = ({id} : {id?: string}) => {
   const router = useRouter();
 
   return (
+    <section id={id}>
     <div className="py-20 w-full max-w-[1600px] mx-auto" id="projects">
       <h1 className="heading text-center">
         Zbierka mojích <span className="text-purple">najnovších projektov</span>
@@ -73,6 +74,7 @@ const RecentProjects = ({id} : {id?: string}) => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
 
