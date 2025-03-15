@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import {
   motion,
@@ -9,17 +10,16 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { heroHeader } from "@/app/projects/data";
-
-
-export const HeroParallax = ({
-  products,
-}: {
-  products: {
-    title: string;
-    thumbnail: string;
-  }[];
-}) => {
+// Použi správnu cestu – ak máš alias "@/data", potom:
+import { HeroHeaderData  } from "../../data/index"; // alias recommended
+// Ak alias nemáš, môžeš použiť relatívnu cestu, napr.:
+// import { heroHeader } from "../../data/index";
+interface HeroParallaxProps {
+  products: { title: string; thumbnail: string }[];
+  heroData: HeroHeaderData; // Pridáme heroData
+}
+export const HeroParallax = 
+  ({ products, heroData }: HeroParallaxProps)=> {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
@@ -32,15 +32,15 @@ export const HeroParallax = ({
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 600]), // Znížené z 1000 na 600
+    useTransform(scrollYProgress, [0, 1], [0, 600]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -600]), // Znížené
+    useTransform(scrollYProgress, [0, 1], [0, -600]),
     springConfig
   );
   const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [10, 0]), // Menšia rotácia
+    useTransform(scrollYProgress, [0, 0.2], [10, 0]),
     springConfig
   );
   const opacity = useSpring(
@@ -48,11 +48,11 @@ export const HeroParallax = ({
     springConfig
   );
   const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [10, 0]), // Znížené
+    useTransform(scrollYProgress, [0, 0.2], [10, 0]),
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-400, 250]), // Menej pohybu nadol
+    useTransform(scrollYProgress, [0, 0.2], [-400, 250]),
     springConfig
   );
 
@@ -61,7 +61,7 @@ export const HeroParallax = ({
       ref={ref}
       className="h-[150vh] py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header />
+      <Header heroData = {heroData}/>
       <motion.div
         style={{
           rotateX,
@@ -102,11 +102,11 @@ export const HeroParallax = ({
   );
 };
 
-export const Header = () => {
+export const Header = ({ heroData }: { heroData: HeroHeaderData }) => {
   return (
     <div className="max-w-7xl relative mx-auto py-10 md:py-20 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-      {heroHeader.title.split("\n").map((line, idx) => (
+      {heroData.title.split("\n").map((line, idx) => (
           <React.Fragment key={idx}>
             {line}
             <br />
@@ -114,7 +114,7 @@ export const Header = () => {
         ))}
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-4 dark:text-neutral-200">
-      {heroHeader.description}
+        {heroData.description}
       </p>
     </div>
   );
@@ -124,27 +124,17 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: {
-    title: string;
-    thumbnail: string;
-  };
+  product: { title: string; thumbnail: string };
   translate: MotionValue<number>;
 }) => {
   return (
     <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -10, // Znížené skákanie pri hoverovaní
-      }}
+      style={{ x: translate }}
+      whileHover={{ y: -10 }}
       key={product.title}
       className="group/product h-80 w-[25rem] relative shrink-0"
     >
-      <Link
-        href={''}
-        className="block group-hover/product:shadow-2xl "
-      >
+      <Link href={""} className="block group-hover/product:shadow-2xl">
         <Image
           src={product.thumbnail}
           height="600"

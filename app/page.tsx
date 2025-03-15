@@ -19,10 +19,10 @@ const Home = () => {
       <div className="max-w-7xl w-full">
       <FloatingNav navItems={navItems} />
         <Hero />
-        <TestimonialsSection/>
-        <FeaturesSectionDemo/>
-        <RecentProjects/>
-        <PortfolioStack/>
+        <TestimonialsSection  id="about"/>
+        <FeaturesSectionDemo id="features"/>
+        <RecentProjects id="projects"/>
+        <PortfolioStack id="contact" />
       </div>
     </main>
   );

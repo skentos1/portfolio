@@ -11,7 +11,7 @@ import { motion } from "motion/react"; // tu je dôležité, že importujete z "
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
 
-export function FeaturesSectionDemo() {
+export function FeaturesSectionDemo({id} : {id? : string}) {
   const features = [
     {
       title: "Môj hlavný Tech Stack",
@@ -43,6 +43,7 @@ export function FeaturesSectionDemo() {
   ];
 
   return (
+    <section id={id}>
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <motion.div
         // Jemná animácia pre nadpis pri nabehnutí do view
@@ -94,6 +95,7 @@ export function FeaturesSectionDemo() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
 

@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "@/components/ui/woble-card";
@@ -9,10 +10,37 @@ import {
   SiFramer,
   SiExpress,
   SiOpenai,
+  SiStrapi,
+  SiGmail 
 } from "react-icons/si";
-import { wobbleCardData } from "../data";
+import { wobbleCardData } from "../../../data/index";
+import type { FullProject } from "../../../data/index";
 
-export function WobbleCardDemo() {
+// Accept an optional "project" prop.
+// If "project" is given, we pull mainInfo, keyFeatures, and techStack from it.
+// Otherwise, we default to "wobbleCardData".
+export function WobbleCardDemo({ project }: { project?: FullProject }) {
+  // If we have a project, use its details; else fallback to the global "wobbleCardData".
+  const data = project
+    ? {
+        mainInfo: {
+          title: project.details.mainInfo.title,
+          description: project.details.mainInfo.description,
+          image: project.details.mainInfo.image,
+        },
+        keyFeatures: {
+          title: project.details.keyFeatures.title,
+          bullets: project.details.keyFeatures.bullets,
+        },
+        techStack: {
+          title: project.details.techStack.title,
+          description: project.details.techStack.description,
+          image: project.details.techStack.image,
+          stack: project.details.techStack.stack,
+        },
+      }
+    : wobbleCardData;
+
   return (
     <div className="max-w-7xl mx-auto w-full">
       <h2 className="text-4xl font-bold text-white text-center mb-10">
@@ -20,44 +48,43 @@ export function WobbleCardDemo() {
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* First Card - AI Analysis */}
+        {/* First Card - mainInfo */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#121212] min-h-[500px] lg:min-h-[300px]">
           <div className="max-w-xs">
             <h2 className="text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
-              {wobbleCardData.mainInfo.title}
+              {data.mainInfo.title}
             </h2>
             <p className="mt-4 text-left text-base/6 text-neutral-200">
-              {wobbleCardData.mainInfo.description}
+              {data.mainInfo.description}
             </p>
           </div>
         </WobbleCard>
 
-        {/* Second Card - Blockchain Technology */}
+        {/* Second Card - keyFeatures */}
         <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-gradient-to-br from-white to-[#ECECEB] to-gray-900">
-          <h2 className="text-2xl text-black">
-            {wobbleCardData.keyFeatures.title}
-          </h2>
+          <h2 className="text-2xl text-black">{data.keyFeatures.title}</h2>
 
           {/* Bullet points (if any) */}
-          {wobbleCardData.keyFeatures.bullets && (
+          {data.keyFeatures.bullets && (
             <ul className="list-disc mt-2 ml-5 text-neutral-900">
-              {wobbleCardData.keyFeatures.bullets.map((bullet, i) => (
+              {data.keyFeatures.bullets.map((bullet, i) => (
                 <li key={i}>{bullet}</li>
               ))}
             </ul>
           )}
         </WobbleCard>
-        {/* Third Card - Tech Stack */}
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gradient-to-br from-gray-900 to-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+
+        {/* Third Card - techStack */}
+        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gradient-to-br from-gray-900 to-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] relative">
           <div className="max-w-sm">
             <h2 className="max-w-sm md:max-w-lg text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
-              {wobbleCardData.techStack.title}
+              {data.techStack.title}
             </h2>
             <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-              {wobbleCardData.techStack.description}
+              {data.techStack.description}
             </p>
             <div className="grid grid-cols-4 gap-6 mt-6">
-              {wobbleCardData.techStack.stack.map((tech) => {
+              {data.techStack.stack.map((tech) => {
                 const IconComponent = getTechIcon(tech.icon);
                 return (
                   <div key={tech.name} className="flex flex-col items-center">
@@ -69,7 +96,7 @@ export function WobbleCardDemo() {
             </div>
           </div>
           <Image
-            src={wobbleCardData.techStack.image}
+            src={data.techStack.image}
             width={500}
             height={500}
             alt="Tech Stack"
@@ -81,16 +108,19 @@ export function WobbleCardDemo() {
   );
 }
 
-// Funkcia na mapovanie ikon zo string hodnôt v dátach
+// Icon mapper for the tech stack
 const getTechIcon = (iconName: string) => {
   const icons: { [key: string]: any } = {
-    FaReact: FaReact,
-    FaNodeJs: FaNodeJs,
-    FaDocker: FaDocker,
-    SiTailwindcss: SiTailwindcss,
-    SiMongodb: SiMongodb,
-    SiFramer: SiFramer,
-    SiExpress: SiExpress,
+    FaReact,
+    FaNodeJs,
+    FaDocker,
+    SiTailwindcss,
+    SiMongodb,
+    SiFramer,
+    SiExpress,
+    SiOpenai,
+    SiStrapi,
+    SiGmail 
   };
-  return icons[iconName] || FaReact; // Default ikona, ak neexistuje
+  return icons[iconName] || FaReact; // default icon if not found
 };
