@@ -12,9 +12,8 @@ interface ProjectPageProps {
   params: { id: string };
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const resolvedParams = await Promise.resolve(params);
-  const project = projects.find((p) => p.id === resolvedParams.id);
+export default function ProjectPage({ params }: ProjectPageProps) {
+  const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
   return (
@@ -30,4 +29,3 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     </div>
   );
 }
-
