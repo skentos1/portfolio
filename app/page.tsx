@@ -2,7 +2,7 @@
 
 
 
-import TestimonialsSection from "@/components/aboutme";
+import TestimonialsSection from "@/components/AboutMe";
 import DummyContent from "@/components/dummy";
 import Hero from "@/components/Hero";
 import PortfolioStack from "@/components/PortfolioStack";
