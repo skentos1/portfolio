@@ -111,9 +111,9 @@ export const FloatingNav = ({
                             shadow-xl
                           "
                         >
-                          <motion.div layout className="p-4 w-[600px]">
+                          <motion.div layout className="p-4 w-[50vw] sm:w-[600px]">
                             {/* 2-stĺpcová mriežka */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
                               {projects.map((project) => (
                                 <Link
                                   key={project.id}
