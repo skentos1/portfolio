@@ -107,9 +107,9 @@ const Row = ({
 );
 export const Header = ({ heroData }: { heroData: HeroHeaderData }) => {
   return (
-    <div className="max-w-6xl mx-auto text-center px-4 pt-[160px] pb-16 md:py-20">
+    <div className="max-w-6xl mx-auto text-center px-4 pt-[140px]  pb-12 md:py-16">
       <h1
-        className="font-bold xl:text-7xl leading-snug sm:leading-tight text-white text-[clamp(1.8rem,5vw,3.5rem)] max-w-[90%] sm:max-w-2xl mx-auto break-normal sm:break-words text-balance hyphens-auto"
+        className="font-bold xl:text-7xl leading-snug sm:leading-tight text-white text-[clamp(1.6rem,5vw,3.5rem)] max-w-[90%] sm:max-w-2xl mx-auto break-normal sm:break-words text-balance hyphens-auto"
       >
         {heroData.title.split("\n").map((line, idx) => (
           <React.Fragment key={idx}>
@@ -118,14 +118,12 @@ export const Header = ({ heroData }: { heroData: HeroHeaderData }) => {
           </React.Fragment>
         ))}
       </h1>
-
-      <p className="max-w-[5%] sm:max-w-xl mx-auto mt-10 text-[clamp(1rem,3vw,1.25rem)] text-neutral-300 break-words leading-relaxed sm:leading-loose text-center text-balance hyphens-auto">
-        {heroData.description}
-      </p>
+      <p className="max-w-[25%] sm:max-w-xl mx-auto mt-6 text-[clamp(0.8rem,2.5vw,1.1rem)] text-neutral-300 break-normal sm:break-words leading-relaxed sm:leading-loose text-center text-balance hyphens-auto">
+  {heroData.description}
+</p>
     </div>
   );
 };
-
 
 export const ProductCard = ({
   product,
