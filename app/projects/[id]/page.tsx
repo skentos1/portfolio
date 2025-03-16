@@ -4,7 +4,7 @@ import { projects } from "../../../data/index";
 import { notFound } from "next/navigation";
 import HeroParallaxDemo from "../components/HeroParalax";
 import { WobbleCardDemo } from "../components/AboutSection";
-import { TabsDemo } from "../components/Tabs";
+import TabsDemo  from "../components/Tabs";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data";
 import Footer  from '../../../components/PortfolioStack'

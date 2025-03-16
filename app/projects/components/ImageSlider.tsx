@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 
 interface SlideItem {
@@ -9,13 +9,14 @@ interface SlideItem {
 }
 
 interface MediaSliderProps {
-  slides: SlideItem[];  // an array of SlideItem
+  slides: SlideItem[];
   title?: string;
-  bgClass?: string;     // tailwind background classes if desired
+  bgClass?: string;
 }
 
 export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null); // Ref pre video
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -25,7 +26,7 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // Guard for empty slides
+  // Guard pre empty slides
   if (slides.length === 0) {
     return (
       <div className={`relative w-full h-auto rounded-2xl p-10 text-xl md:text-4xl font-bold text-white overflow-hidden ${bgClass ?? "bg-gray-500"}`}>
@@ -38,6 +39,13 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
   }
 
   const currentSlide = slides[currentIndex];
+
+  // Click handler na prehratie videa
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
 
   return (
     <div className={`relative w-full h-auto rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white overflow-hidden ${bgClass ?? "bg-gray-500"}`}>
@@ -63,12 +71,13 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
           />
         ) : (
           <video
+            ref={videoRef}
             src={currentSlide.src}
-            className="object-contain w-full h-auto max-h-[70vh] rounded-xl"
-            autoPlay
+            className="object-contain w-full h-auto max-h-[70vh] rounded-xl cursor-pointer"
             loop
             muted
             controls
+            onClick={handleVideoClick} // Po kliknutí prehráme
           />
         )}
 

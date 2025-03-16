@@ -1,15 +1,13 @@
-"use client";
-
 import { Tabs } from "@/components/ui/tabs";
-import { MediaSlider } from "./ImageSlider";
-import type { FullProject,  } from "../../../data";
+import { MediaSlider } from "./ImageSlider"; // upravíme názov komponentu
+import type { FullProject } from "../../../data";
 
 interface TabsDemoProps {
   project?: FullProject;
 }
 
-export function TabsDemo({ project }: TabsDemoProps) {
-  // Ak projekt má definované sliderTabs, použijeme ich, inak fallback na globálne taby.
+// SERVER COMPONENT
+export default function TabsDemo({ project }: TabsDemoProps) {
   const tabs =
     project?.details?.sliderTabs?.map((tab) => ({
       title: tab.label,
@@ -22,16 +20,11 @@ export function TabsDemo({ project }: TabsDemoProps) {
         />
       ),
     })) || [
-      // fallback globálne taby (ak chceš)
       {
         title: "Hero",
         value: "hero",
         content: (
-          <MediaSlider
-            slides={[]}
-            title="Hero Tab"
-            bgClass="bg-gray-600"
-          />
+          <MediaSlider slides={[]} title="Hero Tab" bgClass="bg-gray-600" />
         ),
       },
     ];
@@ -41,7 +34,7 @@ export function TabsDemo({ project }: TabsDemoProps) {
       <h1 className="heading text-center py-8">
         Ukážka <span className="text-purple">tohto projektu</span>
       </h1>
-       <Tabs tabs={tabs} containerClassName="w-full" contentClassName="w-full h-auto" />
+      <Tabs tabs={tabs} containerClassName="w-full" contentClassName="w-full h-auto" />
     </div>
   );
 }
