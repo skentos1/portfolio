@@ -19,15 +19,19 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Submit button clicked");
+
     setIsSending(true);
     setStatusMessage("");
-
+  
     if (!formData.name || !formData.email || !formData.message) {
       setStatusMessage("All fields are required.");
       setIsSending(false);
       return;
     }
+    console.log("Sending data:", formData);
 
+  
     try {
       const response = await fetch("/api/sendMail", {
         method: "POST",
@@ -36,18 +40,22 @@ const ContactForm = () => {
         },
         body: JSON.stringify(formData),
       });
-
+  
       const data = await response.json();
       if (response.ok) {
         setStatusMessage("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
+        console.log("hotovo")
+  
+        // Optional: Delay for nicer UX effect
+        setTimeout(() => setStatusMessage(""), 3000);
       } else {
         setStatusMessage(data.error || "Error sending message.");
       }
     } catch (error) {
       setStatusMessage("Error sending message. Try again.");
     }
-
+  
     setIsSending(false);
   };
 

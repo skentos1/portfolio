@@ -10,20 +10,19 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-// Použi správnu cestu – ak máš alias "@/data", potom:
-import { HeroHeaderData  } from "../../data/index"; // alias recommended
-// Ak alias nemáš, môžeš použiť relatívnu cestu, napr.:
-// import { heroHeader } from "../../data/index";
+import { HeroHeaderData } from "../../data/index";
+
 interface HeroParallaxProps {
   products: { title: string; thumbnail: string }[];
-  heroData: HeroHeaderData; // Pridáme heroData
+  heroData: HeroHeaderData;
 }
-export const HeroParallax = 
-  ({ products, heroData }: HeroParallaxProps)=> {
+
+export const HeroParallax = ({ products, heroData }: HeroParallaxProps) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
   const ref = React.useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -52,16 +51,16 @@ export const HeroParallax =
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-400, 250]),
+    useTransform(scrollYProgress, [0, 0.2], [-300, 200]),
     springConfig
   );
 
   return (
     <div
       ref={ref}
-      className="h-[150vh] py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="min-h-screen py-12 md:py-20 overflow-hidden relative flex flex-col [perspective:1200px] [transform-style:preserve-3d]"
     >
-      <Header heroData = {heroData}/>
+      <Header heroData={heroData} />
       <motion.div
         style={{
           rotateX,
@@ -69,82 +68,86 @@ export const HeroParallax =
           translateY,
           opacity,
         }}
+        className="flex flex-col gap-12 md:gap-16"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-10">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row mb-10 space-x-20">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
+        {/* Row 1 */}
+        <Row products={firstRow} translate={translateX} />
+        {/* Row 2 */}
+        <Row products={secondRow} translate={translateXReverse} />
+        {/* Row 3 */}
+        <Row products={thirdRow} translate={translateX} />
       </motion.div>
     </div>
   );
 };
 
+/** Reusable Row Component (horizontal scroll on small screens) */
+const Row = ({
+  products,
+  translate,
+}: {
+  products: { title: string; thumbnail: string }[];
+  translate: MotionValue<number>;
+}) => (
+  <motion.div
+    style={{
+      x: translate,
+    }}
+    className="
+      flex flex-nowrap md:flex-nowrap gap-6 md:gap-12 
+      overflow-x-auto md:overflow-visible 
+      px-4 md:px-0 
+      justify-start md:justify-center 
+      md:max-w-9xl mx-auto"
+  >
+    {products.map((product) => (
+      <ProductCard product={product} key={product.title} />
+    ))}
+  </motion.div>
+);
 export const Header = ({ heroData }: { heroData: HeroHeaderData }) => {
   return (
-    <div className="max-w-7xl relative mx-auto py-10 md:py-20 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-      {heroData.title.split("\n").map((line, idx) => (
+    <div className="max-w-6xl mx-auto text-center px-4 pt-[160px] pb-16 md:py-20">
+      <h1
+        className="font-bold xl:text-7xl leading-snug sm:leading-tight text-white text-[clamp(1.8rem,5vw,3.5rem)] max-w-[90%] sm:max-w-2xl mx-auto break-normal sm:break-words text-balance hyphens-auto"
+      >
+        {heroData.title.split("\n").map((line, idx) => (
           <React.Fragment key={idx}>
             {line}
             <br />
           </React.Fragment>
         ))}
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-4 dark:text-neutral-200">
+
+      <p className="max-w-[5%] sm:max-w-xl mx-auto mt-10 text-[clamp(1rem,3vw,1.25rem)] text-neutral-300 break-words leading-relaxed sm:leading-loose text-center text-balance hyphens-auto">
         {heroData.description}
       </p>
     </div>
   );
 };
 
+
 export const ProductCard = ({
   product,
-  translate,
 }: {
   product: { title: string; thumbnail: string };
-  translate: MotionValue<number>;
 }) => {
   return (
     <motion.div
-      style={{ x: translate }}
       whileHover={{ y: -10 }}
-      key={product.title}
-      className="group/product h-80 w-[25rem] relative shrink-0"
+      className="group/product relative shrink-0 w-[75vw] sm:w-64 md:w-80 h-60 md:h-80 rounded-xl overflow-hidden"
     >
-      <Link href={""} className="block group-hover/product:shadow-2xl">
+      <Link href={""} className="block w-full h-full">
         <Image
           src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-contain object-left-top absolute h-full w-full inset-0"
+          height={600}
+          width={600}
+          className="object-cover absolute h-full w-full inset-0"
           alt={product.title}
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black transition-opacity pointer-events-none"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-sm md:text-base font-semibold">
         {product.title}
       </h2>
     </motion.div>

@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-
 "use client";
 
 import Image from "next/image";
@@ -14,16 +11,13 @@ import {
   SiExpress,
   SiOpenai,
   SiStrapi,
-  SiGmail 
+  SiGmail,
 } from "react-icons/si";
 import { wobbleCardData } from "../../../data/index";
 import type { FullProject } from "../../../data/index";
 
-// Accept an optional "project" prop.
-// If "project" is given, we pull mainInfo, keyFeatures, and techStack from it.
-// Otherwise, we default to "wobbleCardData".
+// Ak je zadaný "project", použijeme jeho údaje, inak fallback na wobbleCardData.
 export function WobbleCardDemo({ project }: { project?: FullProject }) {
-  // If we have a project, use its details; else fallback to the global "wobbleCardData".
   const data = project
     ? {
         mainInfo: {
@@ -46,15 +40,15 @@ export function WobbleCardDemo({ project }: { project?: FullProject }) {
 
   return (
     <div className="max-w-7xl mx-auto w-full">
-      <h2 className="text-4xl font-bold text-white text-center mb-10">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-10">
         Informácie o projekte
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* First Card - mainInfo */}
-        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#121212] min-h-[500px] lg:min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#121212] min-h-[350px] lg:min-h-[300px]">
           <div className="max-w-xs">
-            <h2 className="text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
+            <h2 className="text-left text-base sm:text-xl md:text-2xl lg:text-4xl font-semibold text-white">
               {data.mainInfo.title}
             </h2>
             <p className="mt-4 text-left text-base/6 text-neutral-200">
@@ -78,9 +72,11 @@ export function WobbleCardDemo({ project }: { project?: FullProject }) {
         </WobbleCard>
 
         {/* Third Card - techStack */}
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gradient-to-br from-gray-900 to-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] relative">
+        <WobbleCard
+          containerClassName="col-span-1 lg:col-span-3 bg-gradient-to-br from-gray-900 to-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] relative"
+        >
           <div className="max-w-sm">
-            <h2 className="max-w-sm md:max-w-lg text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
+            <h2 className="max-w-sm md:max-w-lg text-left text-base sm:text-xl md:text-2xl lg:text-4xl font-semibold text-white">
               {data.techStack.title}
             </h2>
             <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
@@ -98,12 +94,13 @@ export function WobbleCardDemo({ project }: { project?: FullProject }) {
               })}
             </div>
           </div>
+          {/* Obrázok: Na malých obrazovkách je relative (v toku), na md a vyšších absolútne */}
           <Image
             src={data.techStack.image}
             width={500}
             height={500}
             alt="Tech Stack"
-            className="absolute -right-10 md:-right-[40%] lg:-right-[2%] -bottom-10 object-contain rounded-2xl"
+            className="relative md:absolute -right-10 md:-right-[40%] lg:-right-[2%] -bottom-10 object-contain rounded-2xl md:mt-0 mt-6"
           />
         </WobbleCard>
       </div>
@@ -111,7 +108,7 @@ export function WobbleCardDemo({ project }: { project?: FullProject }) {
   );
 }
 
-// Icon mapper for the tech stack
+// Funkcia pre mapovanie názvu ikony na komponent.
 const getTechIcon = (iconName: string) => {
   const icons: { [key: string]: any } = {
     FaReact,
@@ -123,7 +120,7 @@ const getTechIcon = (iconName: string) => {
     SiExpress,
     SiOpenai,
     SiStrapi,
-    SiGmail 
+    SiGmail,
   };
-  return icons[iconName] || FaReact; // default icon if not found
+  return icons[iconName] || FaReact;
 };

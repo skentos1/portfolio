@@ -37,11 +37,11 @@ export function TabsDemo({ project }: TabsDemoProps) {
     ];
 
   return (
-    <div className="h-[20rem] md:h-[48rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-center justify-start my-40">
+    <div className="h-[40rem] md:h-[48rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-center justify-start my-40">
       <h1 className="heading text-center py-8">
         Ukážka <span className="text-purple">tohto projektu</span>
       </h1>
-      <Tabs tabs={tabs} />
+       <Tabs tabs={tabs} containerClassName="w-full" contentClassName="w-full h-auto" />
     </div>
   );
 }

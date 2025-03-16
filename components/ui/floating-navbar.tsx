@@ -52,7 +52,7 @@ export const FloatingNav = ({
         transition={{ duration: 0.2 }}
         className={cn(
           // Dôležité: relative w-full, aby sub-menu vedelo, k čomu sa centrovať
-          "relative w-full flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "relative w-full flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-12 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
           className
         )}
         style={{
@@ -111,9 +111,9 @@ export const FloatingNav = ({
                             shadow-xl
                           "
                         >
-                          <motion.div layout className="p-4 w-[400px]">
+                          <motion.div layout className="p-4 w-[600px]">
                             {/* 2-stĺpcová mriežka */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               {projects.map((project) => (
                                 <Link
                                   key={project.id}

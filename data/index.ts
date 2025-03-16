@@ -3,7 +3,7 @@
 // -------------------------- NAVIGÁCIA & TESTIMONIALY --------------------------
 
 export const navItems = [
-  { name: "O Mne", link: "/#about" },
+  { name: "Profil", link: "/#about" },
   { name: "Projekty", link: "/#projects" },
   { name: "Zručnosti", link: "/#features" },
   { name: "Kontakt", link: "/#contact" },
@@ -523,7 +523,7 @@ export const intelliHomeWobbleCardData: WobbleCardData = {
 export const products: Product[] = [
   {
     title: "AI Analysis",
-    thumbnail: "/images/Fintech/AI1.png",
+    thumbnail: "/images/Fintech/AI.png",
     description: "AI-powered analytics for financial institutions.",
     category: "AI",
   },

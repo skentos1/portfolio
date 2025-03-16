@@ -25,31 +25,26 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // The "current" slide object
+  // Guard for empty slides
+  if (slides.length === 0) {
+    return (
+      <div className={`relative w-full h-auto rounded-2xl p-10 text-xl md:text-4xl font-bold text-white overflow-hidden ${bgClass ?? "bg-gray-500"}`}>
+        {title && <p className="mb-4">{title}</p>}
+        <div className="flex items-center justify-center h-[250px] text-center">
+          Žiadne obrázky dostupné
+        </div>
+      </div>
+    );
+  }
+
   const currentSlide = slides[currentIndex];
 
   return (
-    <div
-      className={`
-        relative 
-        w-full 
-        h-full 
-        rounded-2xl 
-        p-10 
-        text-xl 
-        md:text-4xl 
-        font-bold 
-        text-white 
-        overflow-hidden
-        ${bgClass ?? "bg-gray-500"}
-      `}
-    >
-      {/* Title */}
+    <div className={`relative w-full h-auto rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white overflow-hidden ${bgClass ?? "bg-gray-500"}`}>
       {title && <p className="mb-4">{title}</p>}
 
-      {/* Slider container */}
-      <div className="relative w-full h-[65%] md:h-[80%] flex items-center justify-center">
-        {/* Prev arrow */}
+      <div className="relative w-full min-h-[250px] sm:min-h-[350px] flex items-center justify-center">
+        {/* Prev */}
         <button
           onClick={prevSlide}
           className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white px-3 py-2 rounded-md z-10"
@@ -57,19 +52,19 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
           &larr;
         </button>
 
-        {/* The slide (image or video) */}
+        {/* Slide */}
         {currentSlide.type === "image" ? (
           <Image
             src={currentSlide.src}
             alt="slider-media"
             width={1000}
             height={1000}
-            className="object-contain w-auto h-full rounded-xl"
+            className="object-contain w-full h-auto max-h-[70vh] rounded-xl"
           />
         ) : (
           <video
             src={currentSlide.src}
-            className="object-contain w-auto h-full rounded-xl"
+            className="object-contain w-full h-auto max-h-[70vh] rounded-xl"
             autoPlay
             loop
             muted
@@ -77,7 +72,7 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
           />
         )}
 
-        {/* Next arrow */}
+        {/* Next */}
         <button
           onClick={nextSlide}
           className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white px-3 py-2 rounded-md z-10"

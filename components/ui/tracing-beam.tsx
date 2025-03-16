@@ -58,7 +58,7 @@ export const TracingBeam = ({
     <div className={cn("relative w-full", className)}>
       {/* Fixný beam naľavo */}
       <div className="fixed top-0 left-0 h-screen pointer-events-none z-20">
-        <div className="absolute left-4 md:left-20 top-3">
+        <div className="absolute -left-4 md:-left-3 lg:-left-5 xl:left-4 xxl:left-20 top-3">
           <motion.div
             transition={{ duration: 0.2, delay: 0.5 }}
             animate={{
