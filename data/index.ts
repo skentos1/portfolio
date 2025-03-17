@@ -267,7 +267,7 @@ export const projects: FullProject[] = [
         ],
       },
       heroData: {
-        title: "SpravToZaMna - komplexná platforma",
+        title: "SpravToZaMna platforma",
         description: "Platoforma, ktorá ponúka možnosť používateľom ponúknuť prácu niekomu, kto si chce privyrobiť a príde mu ju vykonať.",
       },
       products: [
