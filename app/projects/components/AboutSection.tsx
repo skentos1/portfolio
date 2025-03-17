@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "@/components/ui/woble-card";
-import { FaReact, FaNodeJs, FaDocker } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDocker,FaStripe } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiMongodb,
@@ -12,6 +12,7 @@ import {
   SiOpenai,
   SiStrapi,
   SiGmail,
+  SiGooglemaps ,
 } from "react-icons/si";
 import { wobbleCardData } from "../../../data/index";
 import type { FullProject } from "../../../data/index";
@@ -121,6 +122,8 @@ const getTechIcon = (iconName: string) => {
     SiOpenai,
     SiStrapi,
     SiGmail,
+    FaStripe,
+    SiGooglemaps 
   };
   return icons[iconName] || FaReact;
 };

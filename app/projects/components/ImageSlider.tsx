@@ -51,7 +51,7 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
     <div className={`relative w-full h-auto rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white overflow-hidden ${bgClass ?? "bg-gray-500"}`}>
       {title && <p className="mb-4">{title}</p>}
 
-      <div className="relative w-full min-h-[250px] sm:min-h-[350px] flex items-center justify-center">
+      <div className="relative w-full min-h-[250px] sm:min-h-[350px]  md:min-h-[500px]  flex items-center justify-center">
         {/* Prev */}
         <button
           onClick={prevSlide}
@@ -67,13 +67,13 @@ export function MediaSlider({ slides, title, bgClass }: MediaSliderProps) {
             alt="slider-media"
             width={1000}
             height={1000}
-            className="object-contain w-full h-auto max-h-[70vh] rounded-xl"
+            className="object-contain w-full h-auto max-h-[70vh] md:max-h-[500px] rounded-xl"
           />
         ) : (
           <video
             ref={videoRef}
             src={currentSlide.src}
-            className="object-contain w-full h-auto max-h-[70vh] rounded-xl cursor-pointer"
+            className="object-contain w-full h-auto max-h-[70vh] md:max-h-[500px]  rounded-xl cursor-pointer"
             loop
             muted
             controls
