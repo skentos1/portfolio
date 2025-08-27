@@ -50,6 +50,31 @@ export function WobbleCardDemo({ project }: { project?: FullProject }) {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-10">
         Informácie o projekte
       </h2>
+      {project && project.link && (
+        <div className="text-center mb-12">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-medium rounded-xl transition-all duration-300 hover:border-white/40 group"
+          >
+            <span className="text-lg">Pozrieť živú ukážku</span>
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* First Card - mainInfo */}
