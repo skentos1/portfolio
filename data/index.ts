@@ -121,293 +121,6 @@ export interface HeroHeaderData {
 
 export const projects: FullProject[] = [
   {
-    id: "FinTech",
-    title: "FinTech Website",
-    titleName: "FinTech Website",
-    des: "Projekt pre moju bakalársku prácu, obsahuje nástroj na analýzu poháňaný A.I.",
-    img: "/images/Fintech.png",
-    iconLists: [
-      "/images/re.svg",
-      "/images/node.svg",
-      "/images/framer.svg",
-      "/images/tail.svg",
-      "/images/dock.svg",
-    ],
-    link: "https://bakalarka-hosting-1.onrender.com/",
-    description: "Moderná platforma pre AI a blockchain riešenia.",
-    details: {
-      mainInfo: {
-        title: "AI-poháňaná FinTech Analýza",
-        description:
-          "Táto stránka predstavuje informácie o FinTechu, opisuje najnovšie technológie a ich aktuálne trendy vo finančníctve. Taktiež obsahuje A.I nástroj, ktorý vykonáva FinTech analýzu pre podniky.",
-        image: "/images/Fintech/Hero3.png",
-      },
-      keyFeatures: {
-        title: "Kľúčové prvky",
-        bullets: [
-          "Moderný dizajn",
-          "Ručný styling",
-          "Využitie Open A.I modelu na spracovanie dát",
-          "Využitie Open A.I modelu na vykonanie analýzy",
-          "Responzívny dizajn",
-          "Zabezpečená databáza",
-        ],
-      },
-      techStack: {
-        title: "Moderný Technologický Stack",
-        description:
-          "Naša platforma je postavená na najnovších technológiách ako React, Node.js, Express, MongoDB, Tailwind CSS, Framer Motion a Docker, čo zaručuje spoľahlivosť a efektivitu. Využíva open A.I model na prácu s dátami a následne sú tieto dáta spracovávané a podávané používateľom.",
-        image: "/images/Fintech/Hero3.png",
-        stack: [
-          { name: "React", icon: "FaReact" },
-          { name: "Node.js", icon: "FaNodeJs" },
-          { name: "Express", icon: "SiExpress" },
-          { name: "MongoDB", icon: "SiMongodb" },
-          { name: "Tailwind CSS", icon: "SiTailwindcss" },
-          { name: "Framer Motion", icon: "SiFramer" },
-          { name: "Docker", icon: "FaDocker" },
-          { name: "AI", icon: "SiOpenai" },
-        ],
-      },
-      heroData: {
-        title: "Inovatívna FinTech Platforma\n",
-        description:
-          "Táto platforma obsahuje informácie o Technológiách vo finančníctve. Napríklad o BlockChaine alebo Umelej Inteligencii, taktiež obsahuje nástroj na anlýzu poháňaný A.I.",
-      },
-      sliderTabs: [
-        {
-          label: "Hero",
-          slides: [
-            { type: "video", src: "/images/Fintech/hero-video.mp4" },
-            { type: "image", src: "/images/Fintech/Hero1.png" },
-            { type: "image", src: "/images/Fintech/Hero2.png" },
-            { type: "image", src: "/images/Fintech/Hero3.png" },
-            { type: "image", src: "/images/Fintech/Hero4.png" },
-          ],
-        },
-        {
-          label: "Blockchain",
-          slides: [
-            { type: "video", src: "/images/Fintech/blockchain-video.mp4" },
-            { type: "image", src: "/images/Fintech/Blockchain.png" },
-            { type: "image", src: "/images/Fintech/Blockchain2.png" },
-            { type: "image", src: "/images/Fintech/Blockchain3.png" },
-            { type: "image", src: "/images/Fintech/Bloockchain1.png" },
-          ],
-        },
-        {
-          label: "A.I Analýza",
-          slides: [
-            { type: "video", src: "/images/Fintech/Analyza-video.mp4" },
-            { type: "image", src: "/images/Fintech/Analyza.png" },
-            { type: "image", src: "/images/Fintech/Analyza2.png" },
-            { type: "image", src: "/images/Fintech/Analyza3.png" },
-            { type: "image", src: "/images/Fintech/Analyza4.png" },
-            { type: "image", src: "/images/Fintech/Analyza5.png" },
-            { type: "image", src: "/images/Fintech/Analyza7.png" },
-            { type: "image", src: "/images/Fintech/Analyza8.png" },
-          ],
-        },
-        {
-          label: "Umelá Inteligencia",
-          slides: [
-            { type: "video", src: "/images/Fintech/Ai-video.mp4" },
-            { type: "image", src: "/images/Fintech/AI.png" },
-            { type: "image", src: "/images/Fintech/AI2.png" },
-            { type: "image", src: "/images/Fintech/AI3.png" },
-            { type: "image", src: "/images/Fintech/AI4.png" },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: "Spravtozamna",
-    title: "SpravToZaMna",
-    titleName: "SpravToZaMna.eu",
-    des: "Platforma, ktorá ponúka používateľom pridávať práce, ktoré im môže nejaký pracovník vykonať.",
-    img: "/images/spravto.png",
-    iconLists: [
-      "/images/re.svg",
-      "/images/node.svg",
-      "/images/js.svg",
-      "/images/tail.svg",
-      "/images/stripe.svg",
-    ],
-    link: "https://spravtozamna.eu/",
-    description:
-      "Platforma pre správu prác - detaily prispôsob si podľa potreby.",
-    details: {
-      mainInfo: {
-        title: "SpravToZaMna.eu",
-        description:
-          "Platforma, ktorá umožňuje používateľom pridávať joby pre bežných ľudí, na ktoré nemajú čas. A bežní ľudia im to prídu vykonať. Po vykonaní práce im prídu peniaze na účet, ktoré Tvorca práce ponúkol pri zadávaní práce. Informácie o práci sú posielané Emailom.",
-        image: "/images/spravto.png",
-      },
-      keyFeatures: {
-        title: "Kľúčové Funkcie",
-        bullets: [
-          "Komplexný projekt",
-          "Obsiahlý Backend",
-          "Konfigurácia platobnej brány",
-          "Automatické potvrdenie platieb po vykonaní práce",
-          "Práca s Google Maps API",
-          "Zabezpečená databáza",
-          "Bohatý State Management",
-        ],
-      },
-      techStack: {
-        title: "Použité Technológie",
-        description:
-          "Platforma postavená na moderných technológiách pre zabezpečenú a spoľahlivú prevádzku. Obsahuje pokročilú konfiguráciu platobnej brány STRIPE. Platba kartou pri potvrdzovaní používateľa pre JOB, no nie je hneď potvrdená. Platba sa potvrdí až po vykonaní práce. Connected accounts, Práca s Google Maps pre polohu práce, Práca s GMAIL API. Práca s GeoNames  pre doplňanie názvu miest. Množstvo komplexných stavov prác, používateľov.",
-        image: "/images/spravto.png",
-        stack: [
-          { name: "React", icon: "FaReact" },
-          { name: "Node.js", icon: "FaNodeJs" },
-          { name: "Express", icon: "SiExpress" },
-          { name: "MongoDB", icon: "SiMongodb" },
-          { name: "Tailwind CSS", icon: "SiTailwindcss" },
-          { name: "Framer Motion", icon: "SiFramer" },
-          { name: "Stripe", icon: "FaStripe " },
-          { name: "Google Maps", icon: "SiGooglemaps  " },
-        ],
-      },
-      heroData: {
-        title: "SpravToZaMna platforma",
-        description:
-          "Platoforma, ktorá ponúka možnosť používateľom ponúknuť prácu niekomu, kto si chce privyrobiť a príde mu ju vykonať.",
-      },
-      products: [
-        {
-          title: "Hero.png",
-          thumbnail: "/images/SpravTo/Hero.png",
-          description: "Ukážkový popis pre Hero.png",
-          category: "SpravTo",
-        },
-        {
-          title: "Hero2.png",
-          thumbnail: "/images/SpravTo/Hero2.png",
-          description: "Ukážkový popis pre Hero2.png",
-          category: "SpravTo",
-        },
-        {
-          title: "Hero3.png",
-          thumbnail: "/images/SpravTo/Hero3.png",
-          description: "Ukážkový popis pre Hero3.png",
-          category: "SpravTo",
-        },
-        {
-          title: "Hero4.png",
-          thumbnail: "/images/SpravTo/Hero4.png",
-          description: "Ukážkový popis pre Hero4.png",
-          category: "SpravTo",
-        },
-        {
-          title: "Hero5.png",
-          thumbnail: "/images/SpravTo/Hero5.png",
-          description: "Ukážkový popis pre Hero5.png",
-          category: "SpravTo",
-        },
-        {
-          title: "O nas.png",
-          thumbnail: "/images/SpravTo/O nas.png",
-          description: "Ukážkový popis pre O nas.png",
-          category: "SpravTo",
-        },
-        {
-          title: "AkoFung2.png",
-          thumbnail: "/images/SpravTo/AkoFung2.png",
-          description: "Ukážkový popis pre AkoFung2.png",
-          category: "SpravTo",
-        },
-        {
-          title: "AkoFung3.png",
-          thumbnail: "/images/SpravTo/AkoFung3.png",
-          description: "Ukážkový popis pre AkoFung3.png",
-          category: "SpravTo",
-        },
-        {
-          title: "Ponuky.png",
-          thumbnail: "/images/SpravTo/Ponuky.png",
-          description: "Ukážkový popis pre Ponuky.png",
-          category: "SpravTo",
-        },
-
-        {
-          title: "Profil.png",
-          thumbnail: "/images/SpravTo/Profil.png",
-          description: "Ukážkový popis pre Profil.png",
-          category: "SpravTo",
-        },
-      ],
-      sliderTabs: [
-        {
-          label: "Hero",
-          slides: [
-            { type: "video", src: "/images/SpravTo/Hero-video.mp4" },
-            { type: "image", src: "/images/SpravTo/Hero.png" },
-            { type: "image", src: "/images/SpravTo/Hero2.png" },
-            { type: "image", src: "/images/SpravTo/Hero3.png" },
-            { type: "image", src: "/images/SpravTo/Hero4.png" },
-            { type: "image", src: "/images/SpravTo/Hero5.png" },
-          ],
-        },
-        {
-          label: "Ponuky Prác",
-          slides: [
-            { type: "video", src: "/images/SpravTo/Ponuky-video.mp4" },
-            { type: "image", src: "/images/SpravTo/Ponuky.png" },
-            { type: "image", src: "/images/SpravTo/Praca.png" },
-            { type: "image", src: "/images/SpravTo/Praca2.png" },
-            { type: "image", src: "/images/SpravTo/Praca3.png" },
-            { type: "image", src: "/images/SpravTo/Praca4.png" },
-          ],
-        },
-        {
-          label: "O nás",
-          slides: [
-            { type: "video", src: "/images/SpravTo/Onas-video.mp4" },
-            { type: "image", src: "/images/SpravTo/O nas.png" },
-            { type: "image", src: "/images/SpravTo/O nas2.png" },
-            { type: "image", src: "/images/SpravTo/O nas3.png" },
-            { type: "image", src: "/images/SpravTo/O nas4.png" },
-          ],
-        },
-        {
-          label: "Ako fungujeme?",
-          slides: [
-            { type: "image", src: "/images/SpravTo/AkoFung.png" },
-            { type: "image", src: "/images/SpravTo/AkoFung2.png" },
-            { type: "image", src: "/images/SpravTo/AkoFung3.png" },
-            { type: "image", src: "/images/SpravTo/AkoFung4.png" },
-            { type: "image", src: "/images/SpravTo/AkoFung5.png" },
-          ],
-        },
-        {
-          label: "Iné",
-          slides: [
-            { type: "video", src: "/images/SpravTo/mojprofil-video.mp4" },
-            { type: "image", src: "/images/SpravTo/Profil.png" },
-            { type: "image", src: "/images/SpravTo/Profil2.png" },
-            { type: "image", src: "/images/SpravTo/CreatorJob.png" },
-            { type: "image", src: "/images/SpravTo/CreatorJob2.png" },
-            { type: "image", src: "/images/SpravTo/CreatorJob3.png" },
-            { type: "image", src: "/images/SpravTo/CreatorJob4.png" },
-            { type: "image", src: "/images/SpravTo/WorkerJob.png" },
-            { type: "image", src: "/images/SpravTo/WorkerJob2.png" },
-            { type: "image", src: "/images/SpravTo/Vytvorit pracu.png" },
-            { type: "image", src: "/images/SpravTo/Vytvorit pracu2.png" },
-            { type: "image", src: "/images/SpravTo/Vytvorit pracu3.png" },
-            { type: "image", src: "/images/SpravTo/Ine1.png" },
-            { type: "image", src: "/images/SpravTo/Ine2.png" },
-            { type: "image", src: "/images/SpravTo/Ine3.png" },
-          ],
-        },
-      ],
-    },
-    // sliderTabs pre spravto nebudeme definovať
-  },
-  {
     id: "KBdigital",
     title: "KB Digital",
     titleName: "KB Digital Website",
@@ -748,6 +461,294 @@ export const projects: FullProject[] = [
       ],
     },
   },
+  {
+    id: "FinTech",
+    title: "FinTech Website",
+    titleName: "FinTech Website",
+    des: "Projekt pre moju bakalársku prácu, obsahuje nástroj na analýzu poháňaný A.I.",
+    img: "/images/Fintech.png",
+    iconLists: [
+      "/images/re.svg",
+      "/images/node.svg",
+      "/images/framer.svg",
+      "/images/tail.svg",
+      "/images/dock.svg",
+    ],
+    link: "https://bakalarka-hosting-1.onrender.com/",
+    description: "Moderná platforma pre AI a blockchain riešenia.",
+    details: {
+      mainInfo: {
+        title: "AI-poháňaná FinTech Analýza",
+        description:
+          "Táto stránka predstavuje informácie o FinTechu, opisuje najnovšie technológie a ich aktuálne trendy vo finančníctve. Taktiež obsahuje A.I nástroj, ktorý vykonáva FinTech analýzu pre podniky.",
+        image: "/images/Fintech/Hero3.png",
+      },
+      keyFeatures: {
+        title: "Kľúčové prvky",
+        bullets: [
+          "Moderný dizajn",
+          "Ručný styling",
+          "Využitie Open A.I modelu na spracovanie dát",
+          "Využitie Open A.I modelu na vykonanie analýzy",
+          "Responzívny dizajn",
+          "Zabezpečená databáza",
+        ],
+      },
+      techStack: {
+        title: "Moderný Technologický Stack",
+        description:
+          "Naša platforma je postavená na najnovších technológiách ako React, Node.js, Express, MongoDB, Tailwind CSS, Framer Motion a Docker, čo zaručuje spoľahlivosť a efektivitu. Využíva open A.I model na prácu s dátami a následne sú tieto dáta spracovávané a podávané používateľom.",
+        image: "/images/Fintech/Hero3.png",
+        stack: [
+          { name: "React", icon: "FaReact" },
+          { name: "Node.js", icon: "FaNodeJs" },
+          { name: "Express", icon: "SiExpress" },
+          { name: "MongoDB", icon: "SiMongodb" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss" },
+          { name: "Framer Motion", icon: "SiFramer" },
+          { name: "Docker", icon: "FaDocker" },
+          { name: "AI", icon: "SiOpenai" },
+        ],
+      },
+      heroData: {
+        title: "Inovatívna FinTech Platforma\n",
+        description:
+          "Táto platforma obsahuje informácie o Technológiách vo finančníctve. Napríklad o BlockChaine alebo Umelej Inteligencii, taktiež obsahuje nástroj na anlýzu poháňaný A.I.",
+      },
+      sliderTabs: [
+        {
+          label: "Hero",
+          slides: [
+            { type: "video", src: "/images/Fintech/hero-video.mp4" },
+            { type: "image", src: "/images/Fintech/Hero1.png" },
+            { type: "image", src: "/images/Fintech/Hero2.png" },
+            { type: "image", src: "/images/Fintech/Hero3.png" },
+            { type: "image", src: "/images/Fintech/Hero4.png" },
+          ],
+        },
+        {
+          label: "Blockchain",
+          slides: [
+            { type: "video", src: "/images/Fintech/blockchain-video.mp4" },
+            { type: "image", src: "/images/Fintech/Blockchain.png" },
+            { type: "image", src: "/images/Fintech/Blockchain2.png" },
+            { type: "image", src: "/images/Fintech/Blockchain3.png" },
+            { type: "image", src: "/images/Fintech/Bloockchain1.png" },
+          ],
+        },
+        {
+          label: "A.I Analýza",
+          slides: [
+            { type: "video", src: "/images/Fintech/Analyza-video.mp4" },
+            { type: "image", src: "/images/Fintech/Analyza.png" },
+            { type: "image", src: "/images/Fintech/Analyza2.png" },
+            { type: "image", src: "/images/Fintech/Analyza3.png" },
+            { type: "image", src: "/images/Fintech/Analyza4.png" },
+            { type: "image", src: "/images/Fintech/Analyza5.png" },
+            { type: "image", src: "/images/Fintech/Analyza7.png" },
+            { type: "image", src: "/images/Fintech/Analyza8.png" },
+          ],
+        },
+        {
+          label: "Umelá Inteligencia",
+          slides: [
+            { type: "video", src: "/images/Fintech/Ai-video.mp4" },
+            { type: "image", src: "/images/Fintech/AI.png" },
+            { type: "image", src: "/images/Fintech/AI2.png" },
+            { type: "image", src: "/images/Fintech/AI3.png" },
+            { type: "image", src: "/images/Fintech/AI4.png" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "Spravtozamna",
+    title: "SpravToZaMna",
+    titleName: "SpravToZaMna.eu",
+    des: "Platforma, ktorá ponúka používateľom pridávať práce, ktoré im môže nejaký pracovník vykonať.",
+    img: "/images/spravto.png",
+    iconLists: [
+      "/images/re.svg",
+      "/images/node.svg",
+      "/images/js.svg",
+      "/images/tail.svg",
+      "/images/stripe.svg",
+    ],
+    link: "https://spravtozamna.eu/",
+    description:
+      "Platforma pre správu prác - detaily prispôsob si podľa potreby.",
+    details: {
+      mainInfo: {
+        title: "SpravToZaMna.eu",
+        description:
+          "Platforma, ktorá umožňuje používateľom pridávať joby pre bežných ľudí, na ktoré nemajú čas. A bežní ľudia im to prídu vykonať. Po vykonaní práce im prídu peniaze na účet, ktoré Tvorca práce ponúkol pri zadávaní práce. Informácie o práci sú posielané Emailom.",
+        image: "/images/spravto.png",
+      },
+      keyFeatures: {
+        title: "Kľúčové Funkcie",
+        bullets: [
+          "Komplexný projekt",
+          "Obsiahlý Backend",
+          "Konfigurácia platobnej brány",
+          "Automatické potvrdenie platieb po vykonaní práce",
+          "Práca s Google Maps API",
+          "Zabezpečená databáza",
+          "Bohatý State Management",
+        ],
+      },
+      techStack: {
+        title: "Použité Technológie",
+        description:
+          "Platforma postavená na moderných technológiách pre zabezpečenú a spoľahlivú prevádzku. Obsahuje pokročilú konfiguráciu platobnej brány STRIPE. Platba kartou pri potvrdzovaní používateľa pre JOB, no nie je hneď potvrdená. Platba sa potvrdí až po vykonaní práce. Connected accounts, Práca s Google Maps pre polohu práce, Práca s GMAIL API. Práca s GeoNames  pre doplňanie názvu miest. Množstvo komplexných stavov prác, používateľov.",
+        image: "/images/spravto.png",
+        stack: [
+          { name: "React", icon: "FaReact" },
+          { name: "Node.js", icon: "FaNodeJs" },
+          { name: "Express", icon: "SiExpress" },
+          { name: "MongoDB", icon: "SiMongodb" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss" },
+          { name: "Framer Motion", icon: "SiFramer" },
+          { name: "Stripe", icon: "FaStripe " },
+          { name: "Google Maps", icon: "SiGooglemaps  " },
+        ],
+      },
+      heroData: {
+        title: "SpravToZaMna platforma",
+        description:
+          "Platoforma, ktorá ponúka možnosť používateľom ponúknuť prácu niekomu, kto si chce privyrobiť a príde mu ju vykonať.",
+      },
+      products: [
+        {
+          title: "Hero.png",
+          thumbnail: "/images/SpravTo/Hero.png",
+          description: "Ukážkový popis pre Hero.png",
+          category: "SpravTo",
+        },
+        {
+          title: "Hero2.png",
+          thumbnail: "/images/SpravTo/Hero2.png",
+          description: "Ukážkový popis pre Hero2.png",
+          category: "SpravTo",
+        },
+        {
+          title: "Hero3.png",
+          thumbnail: "/images/SpravTo/Hero3.png",
+          description: "Ukážkový popis pre Hero3.png",
+          category: "SpravTo",
+        },
+        {
+          title: "Hero4.png",
+          thumbnail: "/images/SpravTo/Hero4.png",
+          description: "Ukážkový popis pre Hero4.png",
+          category: "SpravTo",
+        },
+        {
+          title: "Hero5.png",
+          thumbnail: "/images/SpravTo/Hero5.png",
+          description: "Ukážkový popis pre Hero5.png",
+          category: "SpravTo",
+        },
+        {
+          title: "O nas.png",
+          thumbnail: "/images/SpravTo/O nas.png",
+          description: "Ukážkový popis pre O nas.png",
+          category: "SpravTo",
+        },
+        {
+          title: "AkoFung2.png",
+          thumbnail: "/images/SpravTo/AkoFung2.png",
+          description: "Ukážkový popis pre AkoFung2.png",
+          category: "SpravTo",
+        },
+        {
+          title: "AkoFung3.png",
+          thumbnail: "/images/SpravTo/AkoFung3.png",
+          description: "Ukážkový popis pre AkoFung3.png",
+          category: "SpravTo",
+        },
+        {
+          title: "Ponuky.png",
+          thumbnail: "/images/SpravTo/Ponuky.png",
+          description: "Ukážkový popis pre Ponuky.png",
+          category: "SpravTo",
+        },
+
+        {
+          title: "Profil.png",
+          thumbnail: "/images/SpravTo/Profil.png",
+          description: "Ukážkový popis pre Profil.png",
+          category: "SpravTo",
+        },
+      ],
+      sliderTabs: [
+        {
+          label: "Hero",
+          slides: [
+            { type: "video", src: "/images/SpravTo/Hero-video.mp4" },
+            { type: "image", src: "/images/SpravTo/Hero.png" },
+            { type: "image", src: "/images/SpravTo/Hero2.png" },
+            { type: "image", src: "/images/SpravTo/Hero3.png" },
+            { type: "image", src: "/images/SpravTo/Hero4.png" },
+            { type: "image", src: "/images/SpravTo/Hero5.png" },
+          ],
+        },
+        {
+          label: "Ponuky Prác",
+          slides: [
+            { type: "video", src: "/images/SpravTo/Ponuky-video.mp4" },
+            { type: "image", src: "/images/SpravTo/Ponuky.png" },
+            { type: "image", src: "/images/SpravTo/Praca.png" },
+            { type: "image", src: "/images/SpravTo/Praca2.png" },
+            { type: "image", src: "/images/SpravTo/Praca3.png" },
+            { type: "image", src: "/images/SpravTo/Praca4.png" },
+          ],
+        },
+        {
+          label: "O nás",
+          slides: [
+            { type: "video", src: "/images/SpravTo/Onas-video.mp4" },
+            { type: "image", src: "/images/SpravTo/O nas.png" },
+            { type: "image", src: "/images/SpravTo/O nas2.png" },
+            { type: "image", src: "/images/SpravTo/O nas3.png" },
+            { type: "image", src: "/images/SpravTo/O nas4.png" },
+          ],
+        },
+        {
+          label: "Ako fungujeme?",
+          slides: [
+            { type: "image", src: "/images/SpravTo/AkoFung.png" },
+            { type: "image", src: "/images/SpravTo/AkoFung2.png" },
+            { type: "image", src: "/images/SpravTo/AkoFung3.png" },
+            { type: "image", src: "/images/SpravTo/AkoFung4.png" },
+            { type: "image", src: "/images/SpravTo/AkoFung5.png" },
+          ],
+        },
+        {
+          label: "Iné",
+          slides: [
+            { type: "video", src: "/images/SpravTo/mojprofil-video.mp4" },
+            { type: "image", src: "/images/SpravTo/Profil.png" },
+            { type: "image", src: "/images/SpravTo/Profil2.png" },
+            { type: "image", src: "/images/SpravTo/CreatorJob.png" },
+            { type: "image", src: "/images/SpravTo/CreatorJob2.png" },
+            { type: "image", src: "/images/SpravTo/CreatorJob3.png" },
+            { type: "image", src: "/images/SpravTo/CreatorJob4.png" },
+            { type: "image", src: "/images/SpravTo/WorkerJob.png" },
+            { type: "image", src: "/images/SpravTo/WorkerJob2.png" },
+            { type: "image", src: "/images/SpravTo/Vytvorit pracu.png" },
+            { type: "image", src: "/images/SpravTo/Vytvorit pracu2.png" },
+            { type: "image", src: "/images/SpravTo/Vytvorit pracu3.png" },
+            { type: "image", src: "/images/SpravTo/Ine1.png" },
+            { type: "image", src: "/images/SpravTo/Ine2.png" },
+            { type: "image", src: "/images/SpravTo/Ine3.png" },
+          ],
+        },
+      ],
+    },
+    // sliderTabs pre spravto nebudeme definovať
+  },
+
   {
     id: "IntelliHome",
     title: "IntelliHome Website",
