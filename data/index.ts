@@ -711,7 +711,6 @@ export const projects: FullProject[] = [
         {
           label: "Prezentácia",
           slides: [
-            { type: "video", src: "/images/Farmex/Farmex.mov" },
             { type: "image", src: "/images/Farmex/f1.png" },
             { type: "image", src: "/images/Farmex/f2.png" },
             { type: "image", src: "/images/Farmex/f3.png" },
