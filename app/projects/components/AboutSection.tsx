@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "@/components/ui/woble-card";
-import { FaReact, FaNodeJs, FaDocker,FaStripe } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDocker, FaStripe } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiMongodb,
@@ -12,7 +12,13 @@ import {
   SiOpenai,
   SiStrapi,
   SiGmail,
-  SiGooglemaps ,
+  SiGooglemaps,
+  SiTwilio,
+  SiNextdotjs,
+  SiFigma,
+  SiAdobephotoshop,
+  SiJavascript,
+  SiTypescript,
 } from "react-icons/si";
 import { wobbleCardData } from "../../../data/index";
 import type { FullProject } from "../../../data/index";
@@ -73,9 +79,7 @@ export function WobbleCardDemo({ project }: { project?: FullProject }) {
         </WobbleCard>
 
         {/* Third Card - techStack */}
-        <WobbleCard
-          containerClassName="col-span-1 lg:col-span-3 bg-gradient-to-br from-gray-900 to-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] relative"
-        >
+        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gradient-to-br from-gray-900 to-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] relative">
           <div className="max-w-sm">
             <h2 className="max-w-sm md:max-w-lg text-left text-base sm:text-xl md:text-2xl lg:text-4xl font-semibold text-white">
               {data.techStack.title}
@@ -123,7 +127,13 @@ const getTechIcon = (iconName: string) => {
     SiStrapi,
     SiGmail,
     FaStripe,
-    SiGooglemaps 
+    SiGooglemaps,
+    SiNextdotjs,
+    SiTwilio,
+    SiFigma,
+    SiAdobephotoshop,
+    SiJavascript,
+    SiTypescript,
   };
   return icons[iconName] || FaReact;
 };

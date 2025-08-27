@@ -12,14 +12,21 @@ export const navItems = [
 export const testimonials = [
   {
     quote:
-      "Som študent Technickej univerzity v Košiciach. Študujem informačné technológie. Aktuálne som v 3. ročníku. Vo svojom voľnom čase ma baví spolupracovať a tvoriť rôzne projekty a tým inklinovať k software a web developmentu.",
+      "Som študent Technickej univerzity v Košiciach. Študujem informačné technológie. Aktuálne som v 4. ročníku. Vo svojom voľnom čase ma baví spolupracovať a tvoriť rôzne projekty a tým inklinovať k software a web developmentu.",
     name: "Simon Kentoš",
     designation: "Vývojár",
     src: "/images/Simon.jpg",
   },
   {
     quote:
-      "Aktuálne pracujem v Syntaxe v IPS tíme ako Linux Administrátor na pozícií Junior IT Operátor. No rád by som sa posunul a získal viac skúseností v developérskej sfére.",
+      "Aktuálne pracujem v CodeUppe na pozícií FullStack developer. Pracujem na rôznych projektoch pre klientov, ale aj na interných projektoch. Využívame moderné technológie ako Next.Js, Tailwind CSS, Framer Motion, Strapi, Supabase. V minulosti som pracoval aj s React, Node.Js, Express, MongoDB, MySQL.",
+    name: "CodeUpp s.r.o",
+    designation: "FullStack Developer",
+    src: "/images/codeup.png",
+  },
+  {
+    quote:
+      "Taktiež zároveň pracujem v Syntaxe v IPS tíme ako Linux Administrátor na pozícií Junior IT Operátor.",
     name: "Syntax Systems s.r.o",
     designation: "Junior IT Operátor",
     src: "/images/syntax.jpg",
@@ -37,19 +44,19 @@ export const socialMedia = [
 
 // Interface pre slider taby projektu
 export interface ProjectSliderTab {
-  label: string;       // napr. "Hero", "Blockchain", "Produkty" atď.
+  label: string; // napr. "Hero", "Blockchain", "Produkty" atď.
   slides: SlideItem[]; // pole slider položiek
 }
 
 // Rozšírený interface, ktorý obsahuje údaje pre kartičku aj detail projektu.
 export interface FullProject {
   id: string;
-  title: string;       // napr. "FinTech AI & Blockchain"
-  titleName: string;   // názov pre zobrazenie na kartičke (môže byť rovnaký ako title)
-  des: string;         // stručný popis pre kartičku
-  img: string;         // thumbnail obrázok pre kartičku
+  title: string; // napr. "FinTech AI & Blockchain"
+  titleName: string; // názov pre zobrazenie na kartičke (môže byť rovnaký ako title)
+  des: string; // stručný popis pre kartičku
+  img: string; // thumbnail obrázok pre kartičku
   iconLists: string[]; // zoznam ikon pre kartičku
-  link: string;        // odkaz pre externé projekty alebo placeholder
+  link: string; // odkaz pre externé projekty alebo placeholder
 
   // Detailné údaje pre stránku projektu
   description: string; // podrobný popis projektu
@@ -228,7 +235,8 @@ export const projects: FullProject[] = [
       "/images/stripe.svg",
     ],
     link: "https://spravtozamna.eu/",
-    description: "Platforma pre správu prác - detaily prispôsob si podľa potreby.",
+    description:
+      "Platforma pre správu prác - detaily prispôsob si podľa potreby.",
     details: {
       mainInfo: {
         title: "SpravToZaMna.eu",
@@ -246,8 +254,6 @@ export const projects: FullProject[] = [
           "Práca s Google Maps API",
           "Zabezpečená databáza",
           "Bohatý State Management",
-
-         
         ],
       },
       techStack: {
@@ -262,17 +268,16 @@ export const projects: FullProject[] = [
           { name: "MongoDB", icon: "SiMongodb" },
           { name: "Tailwind CSS", icon: "SiTailwindcss" },
           { name: "Framer Motion", icon: "SiFramer" },
-          {name: "Stripe", icon:"FaStripe "},
-          {name: "Google Maps", icon:"SiGooglemaps  "},
+          { name: "Stripe", icon: "FaStripe " },
+          { name: "Google Maps", icon: "SiGooglemaps  " },
         ],
       },
       heroData: {
         title: "SpravToZaMna platforma",
-        description: "Platoforma, ktorá ponúka možnosť používateľom ponúknuť prácu niekomu, kto si chce privyrobiť a príde mu ju vykonať.",
+        description:
+          "Platoforma, ktorá ponúka možnosť používateľom ponúknuť prácu niekomu, kto si chce privyrobiť a príde mu ju vykonať.",
       },
       products: [
-        
-        
         {
           title: "Hero.png",
           thumbnail: "/images/SpravTo/Hero.png",
@@ -327,15 +332,13 @@ export const projects: FullProject[] = [
           description: "Ukážkový popis pre Ponuky.png",
           category: "SpravTo",
         },
-        
+
         {
           title: "Profil.png",
           thumbnail: "/images/SpravTo/Profil.png",
           description: "Ukážkový popis pre Profil.png",
           category: "SpravTo",
         },
-        
-        
       ],
       sliderTabs: [
         {
@@ -402,23 +405,363 @@ export const projects: FullProject[] = [
         },
       ],
     },
-      // sliderTabs pre spravto nebudeme definovať
-    
+    // sliderTabs pre spravto nebudeme definovať
   },
   {
-  
-      id: "IntelliHome",
-      title: "IntelliHome Website",
-      titleName: "IntelliHome Website",
-      des: "Webová stránka, ktorá ponúka inteligentné riešenia pre vašu domácnosť.",
-      img: "/images/Intelli.png",
-      iconLists: [
-        "/images/re.svg",
-        "/images/node.svg",
-        "/images/js.svg",
-        "/images/tail.svg",
-        "/images/strapi.svg",
+    id: "KBdigital",
+    title: "KB Digital",
+    titleName: "KB Digital Website",
+    des: "Prezentačný web pre digitálnu agentúru KB Digital s moderným dizajnom a komplexnými službami.",
+    img: "/images/KBdigital/kb1.png",
+    iconLists: [
+      "/images/next.webp",
+      "/images/calc.avif",
+
+      "/images/tail.svg",
+      "/images/framer.svg",
+    ],
+    link: "https://kbdigital.eu/",
+    description:
+      "Moderná digitálna agentúra ponúkajúca komplexné riešenia pre váš online biznis.",
+    details: {
+      mainInfo: {
+        title: "KB Digital Agency",
+        description:
+          "KB Digital je moderná digitálna agentúra, ktorá sa špecializuje na tvorbu webových stránok, e-commerce riešení, digitálny marketing a branding. Naša spoločnosť pomáha firmám etablovať sa v online svete pomocou inovatívnych technológií a kreatívnych riešení.",
+        image: "/images/KBdigital/kb1.png",
+      },
+      keyFeatures: {
+        title: "Naše Služby",
+        bullets: [
+          "Tvorba moderných webových stránok",
+          "E-commerce a online obchody",
+          "Digitálny marketing a SEO",
+          "Grafický dizajn a branding",
+          "Responzívny dizajn pre všetky zariadenia",
+          "Správa sociálnych sietí",
+          "UX/UI dizajn",
+        ],
+      },
+      techStack: {
+        title: "Technológie a Nástroje",
+        description:
+          "Používame najmodernejšie technológie a nástroje pre tvorbu webových stránok a digitálnych riešení. Naša expertíza zahŕňa frontend aj backend vývoj, dizajn, marketing automation a analytiku. Každý projekt realizujeme s dôrazom na výkon, bezpečnosť a používateľskú skúsenosť.",
+        image: "/images/KBdigital/kb2.png",
+        stack: [
+          { name: "React", icon: "FaReact" },
+          { name: "Node.js", icon: "FaNodeJs" },
+          { name: "TypeScript", icon: "SiTypescript" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss" },
+          { name: "Framer Motion", icon: "SiFramer" },
+
+          { name: "Photoshop", icon: "SiAdobephotoshop" },
+          { name: "Figma", icon: "SiFigma" },
+        ],
+      },
+      heroData: {
+        title: "KB Digital - Váš Partner v Digitálnom Svete",
+        description:
+          "Transformujeme vaše nápady na úspešné online riešenia. Od návrhu po realizáciu - s nami dosiahnete digitálny úspech.",
+      },
+      products: [
+        {
+          title: "Hlavná stránka",
+          thumbnail: "/images/KBdigital/kb1.png",
+          description: "Moderný dizajn hlavnej stránky s hero sekciou",
+          category: "KBdigital",
+        },
+        {
+          title: "O nás sekcia",
+          thumbnail: "/images/KBdigital/kb2.png",
+          description: "Predstavenie tímu a firmy",
+          category: "KBdigital",
+        },
+        {
+          title: "Služby",
+          thumbnail: "/images/KBdigital/kb3.png",
+          description: "Prehľad všetkých ponúkaných služieb",
+          category: "KBdigital",
+        },
+        {
+          title: "Portfolio",
+          thumbnail: "/images/KBdigital/kb4.png",
+          description: "Ukážky realizovaných projektov",
+          category: "KBdigital",
+        },
+        {
+          title: "Referencie",
+          thumbnail: "/images/KBdigital/kb5.png",
+          description: "Spokojní klienti a ich hodnotenia",
+          category: "KBdigital",
+        },
+        {
+          title: "Kontakt",
+          thumbnail: "/images/KBdigital/kb6.png",
+          description: "Kontaktný formulár a informácie",
+          category: "KBdigital",
+        },
+        {
+          title: "Blog sekcia",
+          thumbnail: "/images/KBdigital/kb7.png",
+          description: "Články a novinky z digitálneho sveta",
+          category: "KBdigital",
+        },
+        {
+          title: "Mobilná verzia",
+          thumbnail: "/images/KBdigital/kb8.png",
+          description: "Responzívny dizajn pre mobilné zariadenia",
+          category: "KBdigital",
+        },
+        {
+          title: "Footer a navigácia",
+          thumbnail: "/images/KBdigital/kb9.png",
+          description: "Kompletná navigácia a pätička stránky",
+          category: "KBdigital",
+        },
       ],
+      sliderTabs: [
+        {
+          label: "Prezentácia",
+          slides: [
+            { type: "video", src: "/images/KBdigital/KBDIgitalWeb.mp4" },
+            { type: "image", src: "/images/KBdigital/kb1.png" },
+            { type: "image", src: "/images/KBdigital/kb2.png" },
+            { type: "image", src: "/images/KBdigital/kb3.png" },
+          ],
+        },
+        {
+          label: "Služby a Portfolio",
+          slides: [
+            { type: "image", src: "/images/KBdigital/kb4.png" },
+            { type: "image", src: "/images/KBdigital/kb5.png" },
+            { type: "image", src: "/images/KBdigital/kb6.png" },
+            { type: "image", src: "/images/KBdigital/kb7.png" },
+          ],
+        },
+        {
+          label: "Responzívnosť",
+          slides: [
+            { type: "image", src: "/images/KBdigital/kb8.png" },
+            { type: "image", src: "/images/KBdigital/kb9.png" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "Farmex",
+    title: "Farmex",
+    titleName: "Farmex - Inzertný Systém",
+    des: "Moderný inzertný systém na štýl Bazos.sk s pokročilými funkciami ako rating, topovanie inzerátov a admin dashboard.",
+    img: "/images/Farmex/f1.png",
+    iconLists: [
+      "/images/next.webp",
+      "/images/strapi.svg",
+      "/images/tail.svg",
+      "/images/framer.svg",
+    ],
+    link: "https://farmex.sk/",
+    description:
+      "Komplexný inzertný portál s pokročilými funkciami a moderným dizajnom.",
+    details: {
+      mainInfo: {
+        title: "Farmex - Inzertný Portál",
+        description:
+          "Farmex je moderný inzertný systém vytvorený na štýl populárneho Bazos.sk. Platforma umožňuje používateľom pridávať, prehliadať a spravovať inzeráty s pokročilými funkciami ako rating systém, topovanie inzerátov cez SMS, vyhľadávanie podobných inzerátov a komplexný admin dashboard pre správu celého systému.",
+        image: "/images/Farmex/f1.png",
+      },
+      keyFeatures: {
+        title: "Kľúčové Funkcie",
+        bullets: [
+          "Pridávanie a správa inzerátov",
+          "Rating systém pre používateľov",
+          "Topovanie inzerátov cez SMS platby",
+          "Vyhľadávanie podobných inzerátov",
+          "Admin dashboard pre správu",
+          "Pokročilé filtrovanie a kategórie",
+          "Responzívny dizajn pre všetky zariadenia",
+          "Notifikácie a správy medzi používateľmi",
+        ],
+      },
+      techStack: {
+        title: "Moderné Technológie",
+        description:
+          "Farmex je postavený na najmodernejších technológiách. Využíva Next.js pre frontend s optimalizáciou výkonu, Strapi ako headless CMS pre správu obsahu, Tailwind CSS pre styling a mobilné optimalizácie. Systém obsahuje pokročilé algoritmy pre podobné inzeráty, SMS API integráciu pre platby a robustný rating systém.",
+        image: "/images/Farmex/f2.png",
+        stack: [
+          { name: "Next.js", icon: "SiNextdotjs" },
+
+          { name: "Strapi", icon: "SiStrapi" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss" },
+          { name: "Typescript", icon: "SiTypescript" },
+
+          { name: "SMS Gateway", icon: "SiTwilio" },
+        ],
+      },
+      heroData: {
+        title: "Farmex - Váš Inzertný Partner",
+        description:
+          "Objavte najlepší spôsob, ako predávať a nakupovať online. S pokročilými funkciami a používateľsky prívetivým rozhraním je Farmex perfektným miestom pre vaše inzeráty.",
+      },
+      products: [
+        {
+          title: "Hlavná stránka",
+          thumbnail: "/images/Farmex/f1.png",
+          description: "Moderný dizajn úvodnej stránky s najnovšími inzerátmi",
+          category: "Farmex",
+        },
+        {
+          title: "Zoznam inzerátov",
+          thumbnail: "/images/Farmex/f2.png",
+          description: "Prehľadný listing všetkých inzerátov s filtrami",
+          category: "Farmex",
+        },
+        {
+          title: "Detail inzerátu",
+          thumbnail: "/images/Farmex/f3.png",
+          description: "Detailná stránka inzerátu s galériu a popisom",
+          category: "Farmex",
+        },
+        {
+          title: "Pridanie inzerátu",
+          thumbnail: "/images/Farmex/f4.png",
+          description: "Formulár pre pridanie nového inzerátu",
+          category: "Farmex",
+        },
+        {
+          title: "Kategórie",
+          thumbnail: "/images/Farmex/f5.png",
+          description: "Prehľad všetkých dostupných kategórií",
+          category: "Farmex",
+        },
+        {
+          title: "Vyhľadávanie",
+          thumbnail: "/images/Farmex/f6.png",
+          description: "Pokročilé vyhľadávanie s filtrami",
+          category: "Farmex",
+        },
+        {
+          title: "Používateľský profil",
+          thumbnail: "/images/Farmex/f7.png",
+          description: "Profil používateľa s hodnoteniami a inzerátmi",
+          category: "Farmex",
+        },
+        {
+          title: "Rating systém",
+          thumbnail: "/images/Farmex/f8.png",
+          description: "Systém hodnotenia a recenzií",
+          category: "Farmex",
+        },
+        {
+          title: "Topovanie inzerátov",
+          thumbnail: "/images/Farmex/f9.png",
+          description: "SMS platby pre zvýraznenie inzerátov",
+          category: "Farmex",
+        },
+        {
+          title: "Admin dashboard",
+          thumbnail: "/images/Farmex/f10.png",
+          description: "Administrátorské rozhranie pre správu systému",
+          category: "Farmex",
+        },
+        {
+          title: "Správa používateľov",
+          thumbnail: "/images/Farmex/f11.png",
+          description: "Admin nástroje pre správu používateľov",
+          category: "Farmex",
+        },
+        {
+          title: "Analytika",
+          thumbnail: "/images/Farmex/f12.png",
+          description: "Štatistiky a analytické prehľady",
+          category: "Farmex",
+        },
+        {
+          title: "Mobilná verzia",
+          thumbnail: "/images/Farmex/f13.png",
+          description: "Optimalizácia pre mobilné zariadenia",
+          category: "Farmex",
+        },
+        {
+          title: "Notifikácie",
+          thumbnail: "/images/Farmex/f14.png",
+          description: "Systém upozornení a správ",
+          category: "Farmex",
+        },
+        {
+          title: "Podobné inzeráty",
+          thumbnail: "/images/Farmex/f15.png",
+          description: "AI algoritmus pre návrhy podobných inzerátov",
+          category: "Farmex",
+        },
+        {
+          title: "Nastavenia",
+          thumbnail: "/images/Farmex/f16.png",
+          description: "Užívateľské nastavenia a preferencie",
+          category: "Farmex",
+        },
+        {
+          title: "Footer a kontakt",
+          thumbnail: "/images/Farmex/f17.png",
+          description: "Kontaktné informácie a odkazy",
+          category: "Farmex",
+        },
+      ],
+      sliderTabs: [
+        {
+          label: "Prezentácia",
+          slides: [
+            { type: "video", src: "/images/Farmex/Farmex.mov" },
+            { type: "image", src: "/images/Farmex/f1.png" },
+            { type: "image", src: "/images/Farmex/f2.png" },
+            { type: "image", src: "/images/Farmex/f3.png" },
+            { type: "image", src: "/images/Farmex/f4.png" },
+          ],
+        },
+        {
+          label: "Inzeráty a Kategórie",
+          slides: [
+            { type: "image", src: "/images/Farmex/f5.png" },
+            { type: "image", src: "/images/Farmex/f6.png" },
+            { type: "image", src: "/images/Farmex/f7.png" },
+            { type: "image", src: "/images/Farmex/f8.png" },
+            { type: "image", src: "/images/Farmex/f9.png" },
+          ],
+        },
+        {
+          label: "Admin a Funkcie",
+          slides: [
+            { type: "image", src: "/images/Farmex/f10.png" },
+            { type: "image", src: "/images/Farmex/f11.png" },
+            { type: "image", src: "/images/Farmex/f12.png" },
+            { type: "image", src: "/images/Farmex/f13.png" },
+          ],
+        },
+        {
+          label: "Pokročilé Funkcie",
+          slides: [
+            { type: "image", src: "/images/Farmex/f14.png" },
+            { type: "image", src: "/images/Farmex/f15.png" },
+            { type: "image", src: "/images/Farmex/f16.png" },
+            { type: "image", src: "/images/Farmex/f17.png" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "IntelliHome",
+    title: "IntelliHome Website",
+    titleName: "IntelliHome Website",
+    des: "Webová stránka, ktorá ponúka inteligentné riešenia pre vašu domácnosť.",
+    img: "/images/Intelli.png",
+    iconLists: [
+      "/images/re.svg",
+      "/images/node.svg",
+      "/images/js.svg",
+      "/images/tail.svg",
+      "/images/strapi.svg",
+    ],
     link: "https://intellihomehost.onrender.com/",
     description:
       "Ponúkame inteligentné svetlá, brány, vykurovanie a kamerové systémy pre modernú domácnosť na objednávku.",
@@ -432,7 +775,6 @@ export const projects: FullProject[] = [
       keyFeatures: {
         title: "Kľúčové Vlastnosti IntelliHome",
         bullets: [
- 
           "Vlastný styling, bez hotových componentov",
           "Filtrovanie produktov",
           "Implementácia emailov pre objednávky",
@@ -453,12 +795,12 @@ export const projects: FullProject[] = [
           { name: "Tailwind CSS", icon: "SiTailwindcss" },
           { name: "Strapi", icon: "SiStrapi" },
           { name: "GMAIL API", icon: "SiGmail" },
-          
         ],
       },
       heroData: {
         title: "IntelliHome - Nová Éra Bývania",
-        description: "Transformujte svoj domov na inteligentné, bezpečné a energeticky efektívne útočisko, kde moderné technológie prinášajú komfort, úsporu a vysokú úroveň ochrany pre celú rodinu.",
+        description:
+          "Transformujte svoj domov na inteligentné, bezpečné a energeticky efektívne útočisko, kde moderné technológie prinášajú komfort, úsporu a vysokú úroveň ochrany pre celú rodinu.",
       },
       products: [
         {
@@ -548,7 +890,6 @@ export const projects: FullProject[] = [
             { type: "image", src: "/images/IntelliHome/hero.png" },
             { type: "image", src: "/images/IntelliHome/hero2.png" },
             { type: "image", src: "/images/IntelliHome/hero3.png" },
-            
           ],
         },
         {
@@ -742,29 +1083,25 @@ export const intelliHomeProducts: Product[] = [
   {
     title: "Automated Gates",
     thumbnail: "/images/Fintech/IntelliHome/gates.png",
-    description:
-      "Automatické brány na komfortný prístup a zvýšenú bezpečnosť.",
+    description: "Automatické brány na komfortný prístup a zvýšenú bezpečnosť.",
     category: "Security",
   },
   {
     title: "IntelliHeat System",
     thumbnail: "/images/Fintech/IntelliHome/heating.png",
-    description:
-      "Efektívne riadenie vykurovania na základe AI analýzy.",
+    description: "Efektívne riadenie vykurovania na základe AI analýzy.",
     category: "Heating",
   },
   {
     title: "24/7 Camera Monitoring",
     thumbnail: "/images/Fintech/IntelliHome/cameras.png",
-    description:
-      "Kamerové systémy s cloudovým nahrávaním a detekciou pohybu.",
+    description: "Kamerové systémy s cloudovým nahrávaním a detekciou pohybu.",
     category: "Security",
   },
   {
     title: "Smart Power Outlets",
     thumbnail: "/images/Fintech/IntelliHome/outlets.png",
-    description:
-      "Diaľkovo ovládané zásuvky a meranie spotreby energie.",
+    description: "Diaľkovo ovládané zásuvky a meranie spotreby energie.",
     category: "IoT",
   },
 ];
